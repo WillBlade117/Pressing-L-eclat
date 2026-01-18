@@ -1,16 +1,236 @@
 ---
+import Layout from '../layouts/Layout.astro';
 
+const title = "Pressing L'Éclat | Nettoyage à Sec & Blanchisserie à [Ville]";
+const description = "Votre pressing écologique et artisanal à [Ville]. Soin du linge, aquanettoyage, costumes et robes de mariée. Service express 24h et collecte à domicile.";
+
+// --- DONNÉES ---
+const services = [
+  {
+    category: "Le Quotidien",
+    desc: "Pour vos tenues de travail et de tous les jours.",
+    icon: "👔",
+    items: [
+      { name: "Chemise (sur cintre)", price: "4,50 €" },
+      { name: "Pantalon de costume", price: "8,00 €" },
+      { name: "Pull Cachemire/Laine", price: "8,50 €" },
+    ]
+  },
+  {
+    category: "Haute Couture",
+    desc: "Soin délicat pour pièces d'exception.",
+    icon: "✨",
+    highlight: true,
+    items: [
+      { name: "Costume complet", price: "16,50 €" },
+      { name: "Robe de Cocktail", price: "dès 25 €" },
+      { name: "Manteau Laine", price: "18,00 €" },
+    ]
+  },
+  {
+    category: "Maison & Blanc",
+    desc: "Redonnez de l'éclat à votre intérieur.",
+    icon: "🛏️",
+    items: [
+      { name: "Couette Plumes (Double)", price: "35,00 €" },
+      { name: "Draps (la paire)", price: "12,00 €" },
+      { name: "Rideaux (le m²)", price: "8,00 €" },
+    ]
+  }
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title={title} description={description}>
+
+	<section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img 
+                src="https://images.unsplash.com/photo-1489278542524-64620100aa86?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
+                alt="Texture tissu" 
+                class="w-full h-full object-cover opacity-100"
+            />
+            <div class="absolute inset-0 bg-stone-900/70 mix-blend-multiply"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-900 via-transparent to-transparent"></div>
+        </div>
+		
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
+			<span class="inline-block py-1 px-4 rounded-full border border-white/20 text-white/80 text-xs font-bold tracking-[0.2em] uppercase mb-6 backdrop-blur-sm">
+                Pressing Artisan & Écologique
+            </span>
+			<h1 class="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 font-serif leading-tight">
+				L'amour du <br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-amber-500">linge parfait.</span>
+			</h1>
+			<p class="text-lg md:text-xl text-stone-200 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+				Une alliance unique entre artisanat traditionnel et technologies écologiques. 
+                Redécouvrez vos vêtements comme au premier jour.
+			</p>
+			<div class="flex flex-col sm:flex-row justify-center gap-4">
+				<a href="/tarifs" class="px-8 py-4 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-500 transition-all duration-300 shadow-xl shadow-amber-900/20 transform hover:-translate-y-1">
+					Voir nos tarifs
+				</a>
+                <a href="#map" class="px-8 py-4 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-lg font-semibold hover:bg-white/20 transition-all duration-300">
+                    Nous trouver
+                </a>
+			</div>
+		</div>
+	</section>
+
+    <div class="bg-stone-900 py-12 border-b border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 flex flex-wrap justify-around items-center gap-8 text-stone-400 font-serif text-lg italic">
+            <span>🌿 Aquanettoyage 100% éco</span>
+            <span class="hidden md:inline">•</span>
+            <span>⏱️ Service Express 24h</span>
+            <span class="hidden md:inline">•</span>
+            <span>🧵 Retouches sur place</span>
+            <span class="hidden md:inline">•</span>
+            <span>🚚 Collecte à domicile</span>
+        </div>
+    </div>
+
+	<section id="concept" class="py-24 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <span class="text-amber-600 font-bold tracking-widest uppercase text-xs">Simplicité & Excellence</span>
+                <h2 class="text-4xl font-serif text-stone-800 mt-2">Votre linge propre en 3 étapes</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-12 relative">
+                <div class="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-stone-200 to-transparent -z-10"></div>
+
+                <div class="text-center group reveal">
+                    <div class="w-24 h-24 mx-auto bg-stone-50 border border-stone-100 rounded-full flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 group-hover:border-amber-200 transition-all duration-300 relative bg-white">
+                        <span class="text-4xl">🧺</span>
+                        <div class="absolute -top-2 -right-2 w-8 h-8 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold text-sm">1</div>
+                    </div>
+                    <h3 class="text-xl font-bold text-stone-800 mb-3 font-serif">Déposez</h3>
+                    <p class="text-stone-500 leading-relaxed px-4">
+                        Passez en boutique ou planifiez une collecte à domicile. Nous identifions ensemble les besoins spécifiques de chaque tissu.
+                    </p>
+                </div>
+
+                <div class="text-center group reveal delay-100">
+                    <div class="w-24 h-24 mx-auto bg-stone-50 border border-stone-100 rounded-full flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 group-hover:border-amber-200 transition-all duration-300 relative bg-white">
+                        <span class="text-4xl">💧</span>
+                        <div class="absolute -top-2 -right-2 w-8 h-8 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold text-sm">2</div>
+                    </div>
+                    <h3 class="text-xl font-bold text-stone-800 mb-3 font-serif">Nous traitons</h3>
+                    <p class="text-stone-500 leading-relaxed px-4">
+                        Aquanettoyage, détachage manuel et repassage artisanal. Vos vêtements reçoivent un soin digne de la haute couture.
+                    </p>
+                </div>
+
+                <div class="text-center group reveal delay-200">
+                    <div class="w-24 h-24 mx-auto bg-stone-50 border border-stone-100 rounded-full flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 group-hover:border-amber-200 transition-all duration-300 relative bg-white">
+                        <span class="text-4xl">✨</span>
+                        <div class="absolute -top-2 -right-2 w-8 h-8 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold text-sm">3</div>
+                    </div>
+                    <h3 class="text-xl font-bold text-stone-800 mb-3 font-serif">Récupérez</h3>
+                    <p class="text-stone-500 leading-relaxed px-4">
+                        Sous 24 à 48h, recevez une notification. Vos vêtements sont prêts, emballés sous housse respirante ou pliés avec soin.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+	<section id="tarifs" class="py-28 bg-stone-50">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6">
+			<div class="text-center mb-20 reveal">
+				<h2 class="text-4xl md:text-5xl font-bold text-stone-800 mb-6 font-serif">Nos Prestations</h2>
+				<div class="w-24 h-1 bg-amber-500 mx-auto"></div>
+                <p class="mt-6 text-stone-500 text-lg">Une transparence totale sur nos prix, aucune surprise.</p>
+			</div>
+
+<div class="grid lg:grid-cols-3 gap-8">
+				{services.map((category, index) => (
+					<div 
+                        class={`
+                            reveal 
+                            relative group p-8 rounded-2xl transition-all duration-500
+                            ${category.highlight 
+                                ? 'bg-stone-900 text-white shadow-2xl shadow-stone-900/30 scale-100 lg:scale-105 z-10' 
+                                : 'bg-white text-stone-800 shadow-lg shadow-stone-200/50 hover:shadow-xl hover:-translate-y-2 border border-stone-100'}
+                        `}
+                        style={`transition-delay: ${index * 200}ms`}
+                    >
+                        <div class="text-5xl mb-6 transform group-hover:scale-110 transition-transform duration-300 origin-left">
+                            {category.icon}
+                        </div>
+                        
+						<h3 class={`text-2xl font-bold mb-2 font-serif ${category.highlight ? 'text-white' : 'text-stone-800'}`}>
+                            {category.category}
+                        </h3>
+                        <p class={`text-sm mb-8 ${category.highlight ? 'text-stone-400' : 'text-stone-500'}`}>
+                            {category.desc}
+                        </p>
+
+						<ul class="space-y-5">
+							{category.items.map((item) => (
+								<li class={`flex justify-between items-center pb-3 border-b border-dashed ${category.highlight ? 'border-stone-700' : 'border-stone-200'}`}>
+									<span class="font-medium">{item.name}</span>
+									<span class={`font-bold ${category.highlight ? 'text-amber-400' : 'text-stone-900'}`}>{item.price}</span>
+								</li>
+							))}
+						</ul>
+
+                        <div class="mt-8 text-center">
+                            <a href="#contact" class={`text-sm font-bold uppercase tracking-widest border-b-2 pb-1 transition-colors ${category.highlight ? 'border-amber-500 text-amber-500 hover:text-white hover:border-white' : 'border-stone-300 text-stone-400 group-hover:text-amber-600 group-hover:border-amber-600'}`}>
+                                En savoir plus
+                            </a>
+                        </div>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section id="map" class="py-0 bg-stone-900 overflow-hidden flex flex-col md:flex-row h-auto md:h-[600px]">
+        
+        <div class="w-full md:w-1/2 p-12 md:p-24 flex flex-col justify-center relative z-10 reveal">
+            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+            
+            <span class="text-amber-500 font-bold tracking-widest uppercase text-xs mb-4">Notre Boutique</span>
+            <h2 class="text-4xl md:text-5xl font-serif text-white mb-8">Au cœur de votre quartier.</h2>
+            
+            <div class="space-y-8">
+                <div class="flex items-start gap-4">
+                    <div class="p-3 bg-stone-800 rounded-lg text-amber-500 text-xl">📍</div>
+                    <div>
+                        <h4 class="text-white font-bold text-lg">Adresse</h4>
+                        <p class="text-stone-400">12 Rue de la Paix, 75000 Ville</p>
+                        <p class="text-stone-500 text-sm mt-1">Parking gratuit à 50m</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                    <div class="p-3 bg-stone-800 rounded-lg text-amber-500 text-xl">🕒</div>
+                    <div>
+                        <h4 class="text-white font-bold text-lg">Horaires d'ouverture</h4>
+                        <p class="text-stone-400">Lun - Ven : 08h00 - 19h30</p>
+                        <p class="text-stone-400">Samedi : 09h00 - 18h00</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-10">
+                <a href="https://maps.google.com" target="_blank" class="inline-flex items-center text-amber-500 font-bold hover:text-white transition">
+                    Obtenir l'itinéraire <span class="ml-2">→</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="w-full md:w-1/2 h-[400px] md:h-full relative filter grayscale hover:grayscale-0 transition duration-700 reveal delay-200">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.142047744348!2d2.33543301567439!3d48.87456857928921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e38f817babb%3A0x78d8de7d12260634!2sPl.%20Vend%C3%B4me%2C%2075001%20Paris!5e0!3m2!1sfr!2sfr!4v1620000000000!5m2!1sfr!2sfr" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+            <div class="absolute inset-0 bg-stone-900/20 pointer-events-none"></div>
+        </div>
+    </section>
+
+</Layout>

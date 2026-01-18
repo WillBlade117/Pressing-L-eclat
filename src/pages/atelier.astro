@@ -1,0 +1,44 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "L'Atelier L'Éclat | Pressing Éco-responsable & Artisanat";
+const description = "Rencontrez les artisans de L'Éclat à [Ville]. Un savoir-faire traditionnel allié à une technologie 100% écologique sans solvants nocifs. Engagement qualité.";
+---
+
+<Layout title={title} description={description}>
+    <section class="bg-stone-900 py-32 text-center relative">
+         <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <h1 class="text-4xl md:text-6xl font-serif text-white relative z-10 reveal">Notre Atelier</h1>
+        <p class="text-stone-400 mt-4 text-lg relative z-10 reveal delay-100">Artisans du propre depuis 2015.</p>
+    </section>
+
+    <section class="py-24 bg-white">
+        <div class="max-w-3xl mx-auto px-6 text-center reveal">
+            <span class="text-6xl text-amber-500 block mb-6">❝❞</span>
+            <h2 class="text-2xl md:text-3xl font-serif text-stone-800 leading-relaxed italic">
+                "Nous croyons que prendre soin de vos vêtements, c'est aussi prendre soin de vous et de la planète. L'Éclat est né de cette volonté d'allier l'artisanat traditionnel aux exigences écologiques modernes."
+            </h2>
+            <p class="mt-8 text-stone-500 font-bold uppercase tracking-widest">— Sophie, Fondatrice</p>
+        </div>
+    </section>
+
+    <section class="py-20 bg-stone-100">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+            <div class="reveal delay-100">
+                <div class="text-5xl mb-4">🌿</div>
+                <h3 class="text-xl font-bold text-stone-900 mb-2">100% Écologique</h3>
+                <p class="text-stone-600">Zéro perchloroéthylène. Nous utilisons exclusivement des produits biodégradables.</p>
+            </div>
+            <div class="reveal delay-200">
+                <div class="text-5xl mb-4">🖐️</div>
+                <h3 class="text-xl font-bold text-stone-900 mb-2">Finiton Main</h3>
+                <p class="text-stone-600">Chaque vêtement est inspecté manuellement et repassé à la main pour un résultat parfait.</p>
+            </div>
+            <div class="reveal delay-300">
+                <div class="text-5xl mb-4">⚡</div>
+                <h3 class="text-xl font-bold text-stone-900 mb-2">Rapidité</h3>
+                <p class="text-stone-600">Une organisation optimisée pour vous rendre vos articles en 24h à 48h.</p>
+            </div>
+        </div>
+    </section>
+</Layout>

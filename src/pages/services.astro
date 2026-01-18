@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "Nos Services : Aquanettoyage, Retouches & Blanchisserie | L'Éclat";
+const description = "Découvrez l'expertise L'Éclat : nettoyage à sec écologique, blanchisserie pour couettes et rideaux, et service de retouches sur mesure par nos couturières.";
+---
+
+<Layout title={title} description={description}>
+    
+    <section class="bg-stone-900 py-32 text-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <h1 class="text-4xl md:text-6xl font-serif text-white relative z-10 reveal">Notre Expertise</h1>
+        <p class="text-stone-400 mt-4 text-lg relative z-10 reveal delay-100">Le soin du détail pour chaque matière.</p>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="reveal">
+                <span class="text-amber-600 font-bold tracking-widest uppercase text-xs">Écologie</span>
+                <h2 class="text-3xl font-serif text-stone-800 mt-2 mb-6">L'Aquanettoyage</h2>
+                <p class="text-stone-600 leading-relaxed mb-6">
+                    Fini les solvants chimiques agressifs. Nous utilisons une technologie à base d'eau et de produits biodégradables. 
+                    Ce procédé préserve les fibres, ravive les couleurs et garantit une odeur de fraîcheur naturelle, sans risque d'allergie.
+                </p>
+                <ul class="space-y-2 text-stone-600">
+                    <li class="flex items-center">✅ Idéal pour les peaux sensibles</li>
+                    <li class="flex items-center">✅ Préserve la souplesse des fibres</li>
+                </ul>
+            </div>
+            <div class="h-80 bg-stone-100 rounded-2xl overflow-hidden reveal delay-200 shadow-xl">
+                <img 
+                    src="/images/aqua.jpg" 
+                    alt="Aquanettoyage" 
+                    class="w-full h-full object-cover" 
+                />
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="h-80 bg-stone-200 rounded-2xl overflow-hidden reveal shadow-xl order-2 md:order-1">
+                <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=800&q=80" alt="Couture" class="w-full h-full object-cover" />
+            </div>
+            <div class="reveal delay-200 order-1 md:order-2">
+                <span class="text-amber-600 font-bold tracking-widest uppercase text-xs">Sur Mesure</span>
+                <h2 class="text-3xl font-serif text-stone-800 mt-2 mb-6">Couture & Retouches</h2>
+                <p class="text-stone-600 leading-relaxed mb-6">
+                    Un bouton manquant ? Un ourlet trop long ? Notre couturière experte redonne vie à vos vêtements préférés directement sur place.
+                    Nous ajustons vos costumes et robes pour un tombé parfait.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="reveal">
+                <span class="text-amber-600 font-bold tracking-widest uppercase text-xs">Maison</span>
+                <h2 class="text-3xl font-serif text-stone-800 mt-2 mb-6">Blanchisserie & Maison</h2>
+                <p class="text-stone-600 leading-relaxed mb-6">
+                    Le soin des grandes pièces nécessite un équipement professionnel. Couettes, rideaux, draps en lin... 
+                    Nous traitons vos textiles d'ameublement avec un soin anti-acariens et un repassage calandre pour un fini "hôtel de luxe".
+                </p>
+            </div>
+            <div class="h-80 bg-stone-100 rounded-2xl overflow-hidden reveal delay-200 shadow-xl">
+                <img 
+                    src="/images/draps.jpg" 
+                    alt="Blanchisserie" 
+                    class="w-full h-full object-cover" 
+            />
+            </div>
+        </div>
+    </section>
+
+</Layout>

@@ -1,0 +1,59 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-stone-900 text-stone-400 py-16 border-t border-stone-800">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+            
+            <div>
+                <h3 class="text-2xl font-serif text-white mb-6">
+                    L'Éclat<span class="text-amber-600">.</span>
+                </h3>
+                <p class="text-sm leading-relaxed mb-6">
+                    L'art du pressing écologique réinventé. 
+                    Nous prenons soin de vos textiles avec des méthodes respectueuses de l'environnement et de votre peau.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-amber-500 transition">Instagram</a>
+                    <a href="#" class="hover:text-amber-500 transition">Facebook</a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold uppercase tracking-widest text-xs mb-6">Navigation</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="/" class="hover:text-white transition">Accueil</a></li>
+                    <li><a href="/services" class="hover:text-white transition">Nos Services</a></li>
+                    <li><a href="/tarifs" class="hover:text-white transition">Tarifs</a></li>
+                    <li><a href="/mentions-legales" class="hover:text-white transition">Mentions Légales</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold uppercase tracking-widest text-xs mb-6">Nous trouver</h4>
+                <ul class="space-y-4 text-sm">
+                    <li class="flex items-start gap-3">
+                        <span class="text-amber-600">📍</span>
+                        <span>12 Rue de la Paix<br>75000 Ville-Lumière</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-amber-600">📞</span>
+                        <a href="tel:0123456789" class="hover:text-white transition">01 23 45 67 89</a>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-amber-600">🕒</span>
+                        <div>
+                            <p><span class="text-stone-300">Lun - Ven :</span> 08h00 - 19h30</p>
+                            <p><span class="text-stone-300">Samedi :</span> 09h00 - 18h00</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-t border-stone-800 pt-8 text-center text-xs text-stone-600">
+            <p>&copy; {currentYear} Pressing L'Éclat. Tous droits réservés.</p>
+        </div>
+    </div>
+</footer>

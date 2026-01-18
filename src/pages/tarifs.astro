@@ -1,0 +1,89 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "Tarifs Pressing & Blanchisserie à [Ville] | L'Éclat";
+const description = "Consultez notre grille tarifaire transparente. Prix pour chemises, costumes, robes de soirée et couettes. Devis gratuit en boutique pour les pièces d'exception.";
+
+// On peut remettre les mêmes données ou les enrichir
+const pricingData = [
+    {
+        title: "Vêtements du quotidien",
+        items: [
+            { name: "Chemise (cintre)", price: "4,50 €" },
+            { name: "Chemise (pliée)", price: "5,50 €" },
+            { name: "Pantalon", price: "8,00 €" },
+            { name: "Jean", price: "8,00 €" },
+            { name: "Pull / Gilet", price: "8,50 €" },
+            { name: "Polo / T-shirt", price: "4,50 €" },
+        ]
+    },
+    {
+        title: "Costumes & Tailleurs",
+        items: [
+            { name: "Costume 2 pièces", price: "16,50 €" },
+            { name: "Costume 3 pièces", price: "22,00 €" },
+            { name: "Veste", price: "9,50 €" },
+            { name: "Cravate", price: "5,00 €" },
+            { name: "Manteau court", price: "16,00 €" },
+            { name: "Manteau long", price: "19,00 €" },
+        ]
+    },
+    {
+        title: "Robes & Cérémonie",
+        items: [
+            { name: "Robe simple", price: "14,00 €" },
+            { name: "Robe soirée (simple)", price: "25,00 €" },
+            { name: "Robe soirée (complexe)", price: "sur devis" },
+            { name: "Robe de mariée", price: "dès 90 €" },
+            { name: "Jupe simple", price: "9,00 €" },
+            { name: "Jupe plissée", price: "15,00 €" },
+        ]
+    },
+    {
+        title: "Maison & Ameublement",
+        items: [
+            { name: "Couette synth. (1 pers)", price: "18,00 €" },
+            { name: "Couette synth. (2 pers)", price: "22,00 €" },
+            { name: "Couette Plumes (2 pers)", price: "35,00 €" },
+            { name: "Oreiller", price: "9,00 €" },
+            { name: "Rideaux (le m²)", price: "8,00 €" },
+            { name: "Tapis (le m²)", price: "15,00 €" },
+        ]
+    }
+];
+---
+
+<Layout title={title} description={description}>
+    <section class="bg-stone-900 py-32 text-center relative">
+         <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <h1 class="text-4xl md:text-6xl font-serif text-white relative z-10 reveal">Grille Tarifaire</h1>
+        <p class="text-stone-400 mt-4 text-lg relative z-10 reveal delay-100">Transparence et justesse des prix.</p>
+    </section>
+
+    <section class="py-20 bg-stone-50">
+        <div class="max-w-4xl mx-auto px-6">
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                {pricingData.map((category, index) => (
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-stone-100 reveal" style={`transition-delay: ${index * 100}ms`}>
+                        <h2 class="text-2xl font-serif text-amber-600 mb-6 border-b border-stone-100 pb-2">{category.title}</h2>
+                        <ul class="space-y-4">
+                            {category.items.map(item => (
+                                <li class="flex justify-between items-end">
+                                    <span class="text-stone-600 font-medium bg-white z-10 pr-2">{item.name}</span>
+                                    <span class="flex-grow border-b border-dotted border-stone-300 mb-1 mx-1"></span>
+                                    <span class="text-stone-900 font-bold bg-white z-10 pl-2">{item.price}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                ))}
+            </div>
+
+            <div class="mt-12 text-center p-6 bg-amber-50 rounded-lg border border-amber-200 reveal delay-300">
+                <p class="text-amber-800 font-medium">✨ Vous avez une demande spécifique ? (Cuir, Tapis d'Orient, Daim)</p>
+                <p class="text-amber-700 text-sm mt-2">Passez en boutique pour un devis personnalisé gratuit.</p>
+            </div>
+        </div>
+    </section>
+</Layout>

@@ -1,0 +1,97 @@
+---
+---
+<header class="fixed w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-lg border-b border-stone-100" id="main-header">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="flex justify-between items-center h-24">
+            
+            <a href="/" class="group relative z-50">
+                <div class="text-3xl font-bold text-stone-800 font-serif tracking-tight">
+                    L'Éclat<span class="text-amber-500 text-5xl leading-none">.</span>
+                </div>
+                <p class="text-xs text-stone-500 uppercase tracking-widest pl-1 group-hover:text-amber-600 transition-colors">Soin du linge</p>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-10">
+                <a href="/services" class="text-stone-600 hover:text-amber-600 font-medium text-sm uppercase tracking-wide transition-colors">Services</a>
+                <a href="/tarifs" class="text-stone-600 hover:text-amber-600 font-medium text-sm uppercase tracking-wide transition-colors">Tarifs</a>
+                <a href="/atelier" class="text-stone-600 hover:text-amber-600 font-medium text-sm uppercase tracking-wide transition-colors">Notre Atelier</a>
+                
+                <a href="tel:0123456789" class="px-6 py-3 bg-stone-900 text-white rounded-lg font-medium hover:bg-amber-600 transition-all duration-300 shadow-lg shadow-stone-900/20 hover:shadow-amber-600/30 transform hover:-translate-y-0.5 flex items-center gap-2">
+                    <span>📞</span> 01 23 45 67 89
+                </a>
+            </div>
+
+            <button id="menu-btn" class="md:hidden relative z-50 p-2 text-stone-800 focus:outline-none">
+                <div class="space-y-2">
+                    <span class="block w-8 h-0.5 bg-stone-800 transition-transform duration-300" id="bar1"></span>
+                    <span class="block w-8 h-0.5 bg-stone-800 transition-opacity duration-300" id="bar2"></span>
+                    <span class="block w-8 h-0.5 bg-stone-800 transition-transform duration-300" id="bar3"></span>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div id="mobile-menu" class="fixed inset-0 bg-stone-50 z-40 flex flex-col items-center justify-center space-y-8 opacity-0 pointer-events-none transition-all duration-300 translate-y-10">
+        <a href="/services" class="text-2xl font-serif text-stone-800 hover:text-amber-600 mobile-link">Nos Services</a>
+        <a href="/tarifs" class="text-2xl font-serif text-stone-800 hover:text-amber-600 mobile-link">Tarifs</a>
+        <a href="/atelier" class="text-2xl font-serif text-stone-800 hover:text-amber-600 mobile-link">L'Atelier</a>
+        <div class="w-12 h-1 bg-amber-200"></div>
+        <a href="tel:0123456789" class="px-8 py-4 bg-stone-900 text-white rounded-lg font-medium shadow-xl mobile-link flex items-center gap-2 justify-center">
+            <span>📞</span> Nous appeler
+        </a>
+    </div>
+</header>
+
+<script>
+    // Logique du menu mobile
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const bar1 = document.getElementById('bar1');
+    const bar2 = document.getElementById('bar2');
+    const bar3 = document.getElementById('bar3');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    let isMenuOpen = false;
+
+    if (menuBtn && mobileMenu && bar1 && bar2 && bar3) {
+        menuBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            
+            if (isMenuOpen) {
+                // Ouvrir le menu
+                mobileMenu.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-10');
+                
+                // Animation Burger en Croix
+                bar1.classList.add('rotate-45', 'translate-y-2.5');
+                bar2.classList.add('opacity-0');
+                bar3.classList.add('-rotate-45', '-translate-y-2.5');
+                
+                // Bloquer le scroll du body
+                document.body.style.overflow = 'hidden';
+            } else {
+                // Fermer le menu
+                mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'translate-y-10');
+                
+                // Reset Burger
+                bar1.classList.remove('rotate-45', 'translate-y-2.5');
+                bar2.classList.remove('opacity-0');
+                bar3.classList.remove('-rotate-45', '-translate-y-2.5');
+                
+                // Réactiver le scroll
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Fermer le menu quand on clique sur un lien
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                isMenuOpen = false;
+                mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'translate-y-10');
+                bar1.classList.remove('rotate-45', 'translate-y-2.5');
+                bar2.classList.remove('opacity-0');
+                bar3.classList.remove('-rotate-45', '-translate-y-2.5');
+                document.body.style.overflow = 'auto';
+            });
+        });
+    }
+</script>
