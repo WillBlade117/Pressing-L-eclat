@@ -36,14 +36,14 @@ const { title, description } = Astro.props;
             const observerOptions = {
                 root: null,
                 rootMargin: '0px',
-                threshold: 0.1 // L'élément s'active quand 10% est visible
+                threshold: 0.1
             };
 
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
-                        observer.unobserve(entry.target); // On arrête d'observer une fois animé
+                        observer.unobserve(entry.target);
                     }
                 });
             }, observerOptions);
@@ -63,7 +63,7 @@ const { title, description } = Astro.props;
     .reveal {
         opacity: 0;
         transform: translateY(30px);
-        transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); /* Courbe fluide "Luxe" */
+        transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
     }
 
     .reveal.visible {
