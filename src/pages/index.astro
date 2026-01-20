@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Map from '../components/Map.astro';
 
 const title = "Pressing L'Éclat | Nettoyage à Sec & Blanchisserie à Paris";
 const description = "Votre pressing écologique et artisanal à Parie. Soin du linge, aquanettoyage, costumes et robes de mariée. Service express 24h et collecte à domicile.";
@@ -142,7 +143,7 @@ const services = [
                 <p class="mt-6 text-stone-500 text-lg">Une transparence totale sur nos prix, aucune surprise.</p>
 			</div>
 
-<div class="grid lg:grid-cols-3 gap-8">
+            <div class="grid lg:grid-cols-3 gap-8">
 				{services.map((category, index) => (
 					<div 
                         class={`
@@ -185,52 +186,6 @@ const services = [
 		</div>
 	</section>
 
-	<section id="map" class="py-0 bg-stone-900 overflow-hidden flex flex-col md:flex-row h-auto md:h-[600px]">
-        
-        <div class="w-full md:w-1/2 p-12 md:p-24 flex flex-col justify-center relative z-10 reveal">
-            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
-            
-            <span class="text-amber-500 font-bold tracking-widest uppercase text-xs mb-4">Notre Boutique</span>
-            <h2 class="text-4xl md:text-5xl font-serif text-white mb-8">Au cœur de votre quartier.</h2>
-            
-            <div class="space-y-8">
-                <div class="flex items-start gap-4">
-                    <div class="p-3 bg-stone-800 rounded-lg text-amber-500 text-xl">📍</div>
-                    <div>
-                        <h4 class="text-white font-bold text-lg">Adresse</h4>
-                        <p class="text-stone-400">12 Rue de la Paix, 75000 Paris</p>
-                        <p class="text-stone-500 text-sm mt-1">Parking gratuit à 50m</p>
-                    </div>
-                </div>
-
-                <div class="flex items-start gap-4">
-                    <div class="p-3 bg-stone-800 rounded-lg text-amber-500 text-xl">🕒</div>
-                    <div>
-                        <h4 class="text-white font-bold text-lg">Horaires d'ouverture</h4>
-                        <p class="text-stone-400">Lun - Ven : 08h00 - 19h30</p>
-                        <p class="text-stone-400">Samedi : 09h00 - 18h00</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="mt-10">
-                <a href="https://maps.google.com" target="_blank" class="inline-flex items-center text-amber-500 font-bold hover:text-white transition">
-                    Obtenir l'itinéraire <span class="ml-2">→</span>
-                </a>
-            </div>
-        </div>
-
-        <div class="w-full md:w-1/2 h-[400px] md:h-full relative filter grayscale hover:grayscale-0 transition duration-700 reveal delay-200">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.142047744348!2d2.33543301567439!3d48.87456857928921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e38f817babb%3A0x78d8de7d12260634!2sPl.%20Vend%C3%B4me%2C%2075001%20Paris!5e0!3m2!1sfr!2sfr!4v1620000000000!5m2!1sfr!2sfr" 
-                width="100%" 
-                height="100%" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy">
-            </iframe>
-            <div class="absolute inset-0 bg-stone-900/20 pointer-events-none"></div>
-        </div>
-    </section>
+    <Map />
 
 </Layout>
