@@ -40,7 +40,7 @@ Ce projet vise l'excellence technique. Audit Google Lighthouse : **Score parfait
 | 🟢 **SEO** | **100** | Méta-données dynamiques, OpenGraph, Structure sémantique HTML5 |
 
 <div align="center">
-    <img src="public/images/l-eclat100%.png" width="100" alt="Score Lighthouse" />
+    <img src="public/images/l-eclat100.png" alt="Score Lighthouse" />
     <br/>
 </div>
 
