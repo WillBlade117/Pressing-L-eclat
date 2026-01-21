@@ -3,20 +3,17 @@
   <img src="https://astro.build/assets/press/astro-icon-dark.svg" width="100" alt="Logo Astro" />
   <br/>
 
-  # 🧺 Pressing L'Éclat
+  # Pressing L'Éclat
   
   **Site vitrine ultra-rapide pour un commerce local Premium**
   
   [![Statut](https://img.shields.io/badge/Statut-En_Ligne-success?style=for-the-badge&logo=check)](https://demo.votre-domaine.com)
-  [![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 
   <p>
     <a href="https://l-eclat.william-sart.fr"><strong>Voir le site en direct »</strong></a>
     <br/>
     <br/>
-    <a href="#-stack-technique">Stack Technique</a> •
-    <a href="#-fonctionnalités">Fonctionnalités</a> •
-    <a href="#-installation">Installation</a>
+    <a href="#-stack-technique">Stack Technique</a>
   </p>
 
 </div>
