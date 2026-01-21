@@ -31,7 +31,7 @@
         </div>
     </div>
 
-    <div id="mobile-menu" class="fixed inset-0 bg-stone-50 z-40 flex flex-col items-center justify-center space-y-8 opacity-0 pointer-events-none transition-all duration-300 translate-y-10">
+    <div id="mobile-menu" class="fixed inset-0 h-screen bg-stone-50 z-40 flex flex-col items-center justify-start pt-32 space-y-8 opacity-0 pointer-events-none transition-all duration-300">
         <a href="/services" class="text-2xl font-serif text-stone-800 hover:text-amber-600 mobile-link">Nos Services</a>
         <a href="/tarifs" class="text-2xl font-serif text-stone-800 hover:text-amber-600 mobile-link">Tarifs</a>
         <a href="/atelier" class="text-2xl font-serif text-stone-800 hover:text-amber-600 mobile-link">L'Atelier</a>
@@ -42,56 +42,51 @@
     </div>
 </header>
 
-<script>
-    // Logique du menu mobile
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const bar1 = document.getElementById('bar1');
-    const bar2 = document.getElementById('bar2');
-    const bar3 = document.getElementById('bar3');
-    const mobileLinks = document.querySelectorAll('.mobile-link');
+<script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const bar1 = document.getElementById('bar1');
+        const bar2 = document.getElementById('bar2');
+        const bar3 = document.getElementById('bar3');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
 
-    let isMenuOpen = false;
+        let isMenuOpen = false;
 
-    if (menuBtn && mobileMenu && bar1 && bar2 && bar3) {
-        menuBtn.addEventListener('click', () => {
+        function toggleMenu() {
             isMenuOpen = !isMenuOpen;
-            
             if (isMenuOpen) {
-                // Ouvrir le menu
                 mobileMenu.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-10');
-                
-                // Animation Burger en Croix
                 bar1.classList.add('rotate-45', 'translate-y-2.5');
                 bar2.classList.add('opacity-0');
                 bar3.classList.add('-rotate-45', '-translate-y-2.5');
-                
-                // Bloquer le scroll du body
                 document.body.style.overflow = 'hidden';
             } else {
-                // Fermer le menu
                 mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'translate-y-10');
-                
-                // Reset Burger
                 bar1.classList.remove('rotate-45', 'translate-y-2.5');
                 bar2.classList.remove('opacity-0');
                 bar3.classList.remove('-rotate-45', '-translate-y-2.5');
-                
-                // Réactiver le scroll
                 document.body.style.overflow = 'auto';
             }
-        });
+        }
 
-        // Fermer le menu quand on clique sur un lien
+        if (menuBtn) {
+            menuBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggleMenu();
+            });
+        }
+
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
-                isMenuOpen = false;
-                mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'translate-y-10');
-                bar1.classList.remove('rotate-45', 'translate-y-2.5');
-                bar2.classList.remove('opacity-0');
-                bar3.classList.remove('-rotate-45', '-translate-y-2.5');
-                document.body.style.overflow = 'auto';
+                if(isMenuOpen) toggleMenu();
             });
         });
-    }
+
+        document.addEventListener('click', (e) => {
+            if (isMenuOpen && mobileMenu && !mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+                toggleMenu();
+            }
+        });
+    });
 </script>
