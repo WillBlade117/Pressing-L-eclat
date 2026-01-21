@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import imgAqua from '../assets/aqua.jpg';
 import imgDraps from '../assets/draps.jpg';
+import imgCouture from '../assets/couture.jpg';
 
 const title = "Nos Services : Aquanettoyage, Retouches & Blanchisserie | L'Éclat";
 const description = "Découvrez l'expertise L'Éclat : nettoyage à sec écologique, blanchisserie pour couettes et rideaux, et service de retouches sur mesure par nos couturières.";
@@ -17,7 +18,7 @@ const description = "Découvrez l'expertise L'Éclat : nettoyage à sec écologi
     <section class="bg-stone-900 py-32 text-center relative overflow-hidden">
         <div class="absolute inset-0 opacity-20 bg-[url('/images/cubes.png')]"></div>
         <h1 class="text-4xl md:text-6xl font-serif text-white relative z-10 reveal">Notre Expertise</h1>
-        <p class="text-stone-400 mt-4 text-lg relative z-10 reveal delay-100">Le soin du détail pour chaque matière.</p>
+        <p class="text-stone-500 mt-4 text-lg relative z-10 reveal delay-100">Le soin du détail pour chaque matière.</p>
     </section>
 
     <section class="py-20 bg-white">
@@ -35,7 +36,7 @@ const description = "Découvrez l'expertise L'Éclat : nettoyage à sec écologi
                 </ul>
             </div>
             <div class="h-80 bg-stone-100 rounded-2xl overflow-hidden reveal delay-200 shadow-xl">
-                <Image 
+                <Image
                     src={imgAqua} 
                     alt="Nettoyage écologique" 
                     class="w-full h-full object-cover"
@@ -48,7 +49,12 @@ const description = "Découvrez l'expertise L'Éclat : nettoyage à sec écologi
     <section class="py-20 bg-stone-50">
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
             <div class="h-80 bg-stone-200 rounded-2xl overflow-hidden reveal shadow-xl order-2 md:order-1">
-                <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=800&q=80" alt="Couture" class="w-full h-full object-cover" />
+                <Image
+                    src={imgCouture} 
+                    alt="Kit de couture" 
+                    class="w-full h-full object-cover"
+                    width={800}  format="webp"
+                />
             </div>
             <div class="reveal delay-200 order-1 md:order-2">
                 <span class="text-amber-600 font-bold tracking-widest uppercase text-xs">Sur Mesure</span>
@@ -72,7 +78,7 @@ const description = "Découvrez l'expertise L'Éclat : nettoyage à sec écologi
                 </p>
             </div>
             <div class="h-80 bg-stone-100 rounded-2xl overflow-hidden reveal delay-200 shadow-xl">
-                <Image 
+                <Image
                     src={imgDraps} 
                     alt="Nettoyage écologique" 
                     class="w-full h-full object-cover"
