@@ -39,7 +39,7 @@ Ce projet vise l'excellence technique. Audit Google Lighthouse : **Score parfait
 | 🟢 **Best Practices** | **100** | HTTPS strict (HSTS), Zéro cookies tiers, CSP |
 | 🟢 **SEO** | **100** | Méta-données dynamiques, OpenGraph, Structure sémantique HTML5 |
 
-![Score Lighthouse](src/images/l-eclat100%.png)
+![Score Lighthouse](/images/l-eclat100%.png)
 
 ## 🛠 Stack Technique
 
@@ -59,21 +59,6 @@ Architecture **Jamstack** moderne pour une sécurité et une rapidité maximales
 * 📱 **100% Responsive :** Grilles adaptatives et menu mobile fluide.
 * 🗺️ **Carte Optimisée :** Remplacement de l'iframe Google Maps par une image statique interactive (gain de performance énorme).
 * 🔒 **Confidentialité :** Aucun cookie de tracking, respect total du RGPD.
-
-## 💻 Installation Locale
-
-Pour tester le projet sur votre machine :
-
-```bash
-# Cloner le dépôt
-git clone [https://github.com/votre-pseudo/l-eclat.git](https://github.com/votre-pseudo/l-eclat.git)
-
-# Installer les dépendances
-npm install
-
-# Lancer le serveur de développement
-npm run dev
-```
 
 ## 📂 Structure du Projet
 
