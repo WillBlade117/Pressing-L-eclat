@@ -39,7 +39,7 @@ Ce projet vise l'excellence technique. Audit Google Lighthouse : **Score parfait
 | 🟢 **Best Practices** | **100** | HTTPS strict (HSTS), Zéro cookies tiers, CSP |
 | 🟢 **SEO** | **100** | Méta-données dynamiques, OpenGraph, Structure sémantique HTML5 |
 
-![Score Lighthouse](/images/l-eclat100%.png)
+<div align="center">![Score Lighthouse](/images/l-eclat100%.png)</div>
 
 ## 🛠 Stack Technique
 
