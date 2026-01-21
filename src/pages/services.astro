@@ -1,5 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import imgAqua from '../assets/aqua.jpg';
+import imgDraps from '../assets/draps.jpg';
 
 const title = "Nos Services : Aquanettoyage, Retouches & Blanchisserie | L'Éclat";
 const description = "Découvrez l'expertise L'Éclat : nettoyage à sec écologique, blanchisserie pour couettes et rideaux, et service de retouches sur mesure par nos couturières.";
@@ -32,10 +35,11 @@ const description = "Découvrez l'expertise L'Éclat : nettoyage à sec écologi
                 </ul>
             </div>
             <div class="h-80 bg-stone-100 rounded-2xl overflow-hidden reveal delay-200 shadow-xl">
-                <img 
-                    src="/images/aqua.jpg" 
-                    alt="Aquanettoyage" 
-                    class="w-full h-full object-cover" 
+                <Image 
+                    src={imgAqua} 
+                    alt="Nettoyage écologique" 
+                    class="w-full h-full object-cover"
+                    width={800}  format="webp"
                 />
             </div>
         </div>
@@ -68,11 +72,12 @@ const description = "Découvrez l'expertise L'Éclat : nettoyage à sec écologi
                 </p>
             </div>
             <div class="h-80 bg-stone-100 rounded-2xl overflow-hidden reveal delay-200 shadow-xl">
-                <img 
-                    src="/images/draps.jpg" 
-                    alt="Blanchisserie" 
-                    class="w-full h-full object-cover" 
-            />
+                <Image 
+                    src={imgDraps} 
+                    alt="Nettoyage écologique" 
+                    class="w-full h-full object-cover"
+                    width={800}  format="webp"
+                />
             </div>
         </div>
     </section>
